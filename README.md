@@ -25,3 +25,18 @@ Their reports are then optionally synthesized by a **lead agent** that deduplica
 ---
 
 ## 🏗️ Architecture
+
+Each worker is a **fully independent Claude session**. No shared context, no cross-talk. They see only the codebase and their system prompt.
+
+---
+
+## 🚀 Quick start
+
+```bash
+git clone https://github.com/yourname/claude-swarm.git
+cd claude-swarm
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e .
+
+export ANTHROPIC_API_KEY="sk-ant-..."
+claude-swarm /path/to/your/project
